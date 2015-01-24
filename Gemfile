@@ -17,4 +17,5 @@ group :development, :test do
   gem 'ruby-debug', platform: :jruby
   gem 'spring'
   gem 'factory_girl_rails'
+  gem 'shoulda-matchers', require: false
 end

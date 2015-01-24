@@ -1,5 +1,5 @@
 require "rails_helper"
 
-describe Listing do
-  pending "add some examples to (or delete) #{__FILE__}"
+describe Listing, "Validation" do
+  it { should validate_presence_of(:name) }
 end
