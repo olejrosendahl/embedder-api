@@ -9,10 +9,12 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
+gem 'rails-api'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 group :development, :test do
   gem 'rspec-rails'
   gem 'ruby-debug', platform: :jruby
   gem 'spring'
+  gem 'factory_girl_rails'
 end
