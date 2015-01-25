@@ -35,9 +35,9 @@ describe Api::V1::ListingsController do
     end
 
     it "is fast" do
-      listing = FactoryGirl.create(:listing)
+      FactoryGirl.create_list(:listing, 5)
       expect(Benchmark.realtime do
-        5.times { get "/v1/listings/#{listing.id}" }
+        5.times { get "/v1/listings" }
       end).to be < 0.2
     end
 
