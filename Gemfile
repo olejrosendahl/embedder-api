@@ -14,6 +14,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'rails-api'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'puma'
+gem 'rails_12factor'
 
 group :development, :test do
   gem 'rspec-rails'
