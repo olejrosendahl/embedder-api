@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+ruby '2.2.0', :engine => 'jruby', :engine_version => '9.0.0.0.pre1'
+
 gem 'rails', '4.2.0'
 gem 'jdbc-postgres'
 gem 'activerecord-jdbcsqlite3-adapter'
@@ -11,6 +13,7 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'rails-api'
 gem 'sdoc', '~> 0.4.0', group: :doc
+gem 'puma'
 
 group :development, :test do
   gem 'rspec-rails'
