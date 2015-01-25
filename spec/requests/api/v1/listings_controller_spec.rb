@@ -1,17 +1,18 @@
 require 'rails_helper'
+require 'benchmark'
 
 describe Api::V1::ListingsController do
 
   describe "GET #show" do
     it "returns a listing" do
       listing = FactoryGirl.create(:listing)
-      listing.save!
 
       get "/v1/listings/#{listing.id}"
 
       expect(response).to be_success
       expect(json["name"]).to eq(listing.name)
     end
+
   end
 
   describe "POST #create" do
@@ -32,6 +33,14 @@ describe Api::V1::ListingsController do
       expect(response).to be_success
       expect(json['listings'].length).to be(5)
     end
+
+    it "is fast" do
+      listing = FactoryGirl.create(:listing)
+      expect(Benchmark.realtime do
+        5.times { get "/v1/listings/#{listing.id}" }
+      end).to be < 0.2
+    end
+
   end
 
   describe "DELETE #destroy" do
