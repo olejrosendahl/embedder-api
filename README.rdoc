@@ -1,3 +1,4 @@
+[ ![Codeship Status for olejrosendahl/embedder-api](https://codeship.com/projects/d04a0130-85da-0132-7084-3676798900ff/status?branch=master)](https://codeship.com/projects/58865)
 == README
 
 This README would normally document whatever steps are necessary to get the
