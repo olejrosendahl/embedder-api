@@ -38,7 +38,7 @@ describe Api::V1::ListingsController do
       FactoryGirl.create_list(:listing, 5)
       expect(Benchmark.realtime do
         5.times { get "/v1/listings" }
-      end).to be < 0.2
+      end).to be < 0.6
     end
 
   end
