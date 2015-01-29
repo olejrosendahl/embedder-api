@@ -6,5 +6,5 @@ Rails.application.routes.draw do
     end
   end
 
-  root 'listings#index'
+  root 'api/v1/listings#index'
 end
