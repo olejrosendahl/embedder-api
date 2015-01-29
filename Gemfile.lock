@@ -30,11 +30,6 @@ GEM
       activemodel (= 4.2.0)
       activesupport (= 4.2.0)
       arel (~> 6.0)
-    activerecord-jdbc-adapter (1.3.13)
-      activerecord (>= 2.2)
-    activerecord-jdbcpostgresql-adapter (1.3.13)
-      activerecord-jdbc-adapter (~> 1.3.13)
-      jdbc-postgres (>= 9.1)
     activesupport (4.2.0)
       i18n (~> 0.7)
       json (~> 1.7, >= 1.7.7)
@@ -43,6 +38,10 @@ GEM
       tzinfo (~> 1.1)
     arel (6.0.0)
     builder (3.2.2)
+    byebug (3.5.1)
+      columnize (~> 0.8)
+      debugger-linecache (~> 1.2)
+      slop (~> 3.6)
     coffee-rails (4.1.0)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.0)
@@ -51,6 +50,7 @@ GEM
       execjs
     coffee-script-source (1.8.0)
     columnize (0.9.0)
+    debugger-linecache (1.2.0)
     diff-lcs (1.2.5)
     dotenv (1.0.2)
     erubis (2.7.0)
@@ -70,7 +70,6 @@ GEM
     jbuilder (2.2.6)
       activesupport (>= 3.0.0, < 5)
       multi_json (~> 1.2)
-    jdbc-postgres (9.3.1102)
     jquery-rails (4.0.3)
       rails-dom-testing (~> 1.0)
       railties (>= 4.2.0)
@@ -88,6 +87,7 @@ GEM
     nokogiri (1.6.6.1)
       mini_portile (~> 0.6.0)
     nokogiri (1.6.6.1-java)
+    pg (0.18.1)
     puma (2.11.0)
       rack (>= 1.1, < 2.0)
     puma (2.11.0-java)
@@ -146,10 +146,6 @@ GEM
       rspec-mocks (~> 3.1.0)
       rspec-support (~> 3.1.0)
     rspec-support (3.1.2)
-    ruby-debug (0.10.4)
-      columnize (>= 0.1)
-      ruby-debug-base (~> 0.10.4.0)
-    ruby-debug-base (0.10.4-java)
     sass (3.4.10)
     sass-rails (5.0.1)
       railties (>= 4.0.0, < 5.0)
@@ -162,6 +158,7 @@ GEM
       rdoc (~> 4.0)
     shoulda-matchers (2.7.0)
       activesupport (>= 3.0.0)
+    slop (3.6.0)
     spring (1.2.0)
     sprockets (2.12.3)
       hike (~> 1.2)
@@ -189,18 +186,18 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  activerecord-jdbcpostgresql-adapter
+  byebug
   coffee-rails (~> 4.1.0)
   factory_girl_rails
   foreman
   jbuilder (~> 2.0)
   jquery-rails
+  pg
   puma
   rails (= 4.2.0)
   rails-api
   rails_12factor
   rspec-rails
-  ruby-debug
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   shoulda-matchers
