@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::API
   before_action :set_resource, only: [:show, :update, :destroy]
+  rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
 
   def index
     resources = resource_class.all
@@ -14,7 +15,6 @@ class ApplicationController < ActionController::API
 
   def create
     set_resource(resource_class.create(permitted_params[resource_name]))
-    render json: get_resource
   end
 
   def destroy
@@ -23,7 +23,6 @@ class ApplicationController < ActionController::API
 
   def update
     get_resource.update(permitted_params[resource_name])
-    render json: get_resource
   end
 
 
@@ -31,6 +30,10 @@ class ApplicationController < ActionController::API
 
   def get_resource
     instance_variable_get("@#{resource_name}")
+  end
+
+  def record_not_found
+    render json: {message: "Record not found"}, status: :not_found
   end
 
   def resource_class

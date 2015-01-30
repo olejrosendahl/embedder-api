@@ -13,6 +13,10 @@ describe Api::V1::ListingsController do
       expect(json["name"]).to eq(listing.name)
     end
 
+    it "returns 404 on non-existing listings" do
+      get "/v1/listings/9999"
+      expect(response).to be_not_found
+    end
   end
 
   describe "POST #create" do
@@ -62,6 +66,11 @@ describe Api::V1::ListingsController do
 
       expect(response).to be_success
       expect(listing.reload.name).to eq("New Name")
+    end
+
+    it "returns 404 on-non existing listing" do
+      patch "/v1/listings/9999"
+      expect(response).to be_not_found
     end
   end
 
