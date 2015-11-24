@@ -14,15 +14,29 @@ class ApplicationController < ActionController::API
   end
 
   def create
-    set_resource(resource_class.create(permitted_params[resource_name]))
+    new_resource = resource_class.new(permitted_params[resource_name])
+    if new_resource.save
+      set_resource(new_resource)
+      render json: new_resource, status: :created
+    else
+      render json: new_resource.errors, status: :unprocessable_entity
+    end
   end
 
   def destroy
-    get_resource.destroy!
+    if get_resource.destroy
+      render json: :no_content, status: :ok
+    else
+      render json: get_resource.errors, status: :unprocessable_entity
+    end
   end
 
   def update
-    get_resource.update(permitted_params[resource_name])
+    if get_resource.update(permitted_params[resource_name])
+      render json: :no_content, status: :ok
+    else
+      render json: get_resource.errors, status: :unprocessable_entity
+    end
   end
 
 

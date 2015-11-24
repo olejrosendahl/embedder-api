@@ -52,4 +52,6 @@ RSpec.configure do |config|
   config.infer_spec_type_from_file_location!
 
   config.include Requests::JsonHelpers, type: :request
+  config.include(Shoulda::Matchers::ActiveModel, type: :model)
+  config.include(Shoulda::Matchers::ActiveRecord, type: :model)
 end
