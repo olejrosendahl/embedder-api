@@ -19,7 +19,9 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'byebug'
   gem 'spring'
+  gem 'spring-commands-rspec'
   gem 'factory_girl_rails'
   gem 'shoulda-matchers', require: false
   gem 'foreman'
+  gem 'did_you_mean'
 end
