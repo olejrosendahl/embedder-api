@@ -35,7 +35,7 @@ SET default_with_oids = false;
 
 CREATE TABLE listings (
     id integer NOT NULL,
-    name character varying(255),
+    name character varying,
     created_at timestamp without time zone NOT NULL,
     updated_at timestamp without time zone NOT NULL
 );
@@ -65,7 +65,7 @@ ALTER SEQUENCE listings_id_seq OWNED BY listings.id;
 --
 
 CREATE TABLE schema_migrations (
-    version character varying(255) NOT NULL
+    version character varying NOT NULL
 );
 
 
