@@ -73,5 +73,4 @@ describe Api::V1::ListingsController do
       expect(response).to be_not_found
     end
   end
-
 end

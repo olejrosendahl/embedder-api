@@ -14,6 +14,8 @@ gem 'rails-api'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'puma'
 gem 'rails_12factor'
+gem "refile", require: "refile/rails"
+gem "refile-mini_magick"
 
 group :development, :test do
   gem 'rspec-rails'
@@ -24,4 +26,5 @@ group :development, :test do
   gem 'shoulda-matchers', require: false
   gem 'foreman'
   gem 'did_you_mean'
+  gem 'webmock'
 end
