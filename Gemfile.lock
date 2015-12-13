@@ -98,6 +98,7 @@ GEM
     puma (2.15.3)
     puma (2.15.3-java)
     rack (1.6.4)
+    rack-cors (0.4.0)
     rack-protection (1.5.3)
       rack
     rack-test (0.6.3)
@@ -224,6 +225,7 @@ DEPENDENCIES
   jquery-rails
   pg
   puma
+  rack-cors
   rails (= 4.2.0)
   rails-api
   rails_12factor

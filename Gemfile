@@ -16,6 +16,7 @@ gem 'puma'
 gem 'rails_12factor'
 gem "refile", require: "refile/rails"
 gem "refile-mini_magick"
+gem 'rack-cors', :require => 'rack/cors'
 
 group :development, :test do
   gem 'rspec-rails'
