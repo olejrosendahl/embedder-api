@@ -1,5 +1,5 @@
 class Listing < ActiveRecord::Base
-  validates :name, presence: true
+  validates :name, :content, presence: true
 
   has_many :attachments
 end

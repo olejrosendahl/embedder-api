@@ -72,7 +72,8 @@ CREATE TABLE listings (
     id integer NOT NULL,
     name character varying,
     created_at timestamp without time zone NOT NULL,
-    updated_at timestamp without time zone NOT NULL
+    updated_at timestamp without time zone NOT NULL,
+    content text NOT NULL
 );
 
 
@@ -169,4 +170,6 @@ INSERT INTO schema_migrations (version) VALUES ('20151130043939');
 INSERT INTO schema_migrations (version) VALUES ('20151130055048');
 
 INSERT INTO schema_migrations (version) VALUES ('20151130055556');
+
+INSERT INTO schema_migrations (version) VALUES ('20151214144554');
 

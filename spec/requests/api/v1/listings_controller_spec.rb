@@ -11,6 +11,7 @@ describe Api::V1::ListingsController do
 
       expect(response).to be_success
       expect(json["name"]).to eq(listing.name)
+      expect(json['content']).to eq(listing.content)
     end
 
     it "returns 404 on non-existing listings" do
@@ -21,10 +22,13 @@ describe Api::V1::ListingsController do
 
   describe "POST #create" do
     it "creates as listing" do
-      post "/v1/listings", {listing: FactoryGirl.attributes_for(:listing)}
+      listing_attributes = FactoryGirl.attributes_for(:listing)
+
+      post "/v1/listings", { listing: listing_attributes }
 
       expect(response).to  be_success
-      expect(Listing.first.name).to eq("My listing")
+      expect(Listing.first.name).to eq(listing_attributes[:name])
+      expect(Listing.first.content).to eq(listing_attributes[:content])
     end
   end
 
