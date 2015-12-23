@@ -10,8 +10,10 @@ describe Api::V1::ListingsController do
       get "/v1/listings/#{listing.id}"
 
       expect(response).to be_success
+      expect(json['id']).to eq(listing.id);
       expect(json["name"]).to eq(listing.name)
       expect(json['content']).to eq(listing.content)
+      expect(json['created_at']).to eq(listing.created_at.as_json)
     end
 
     it "returns 404 on non-existing listings" do
